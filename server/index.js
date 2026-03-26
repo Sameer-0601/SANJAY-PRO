@@ -11,7 +11,8 @@ const PORT = process.env.PORT || 5001;
 // CORS
 const allowedOrigins = [
   'https://sanjay-pro.vercel.app',
-  'http://localhost:3000'
+  'http://localhost:3000',
+  'http://localhost:5173'
 ];
 
 app.use(cors({
@@ -56,6 +57,9 @@ app.use((err, req, res, next) => {
 });
 
 // MongoDB
+const dns = require('dns');
+dns.setServers(['8.8.8.8', '8.8.4.4']);
+
 const mongoURI = process.env.MONGO_URI;
 
 if (!mongoURI) {

@@ -10,7 +10,12 @@ import InvoicesPage from './pages/InvoicesPage';
 import InvoiceBuilder from './pages/InvoiceBuilder';
 
 const PrivateRoute = ({ children }) => {
-  const { user } = useAppContext();
+  const { user, loading } = useAppContext();
+  
+  if (loading) {
+    return <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900"><div className="w-8 h-8 rounded-full border-4 border-primary border-t-transparent animate-spin"></div></div>;
+  }
+  
   return user ? <DashboardLayout>{children}</DashboardLayout> : <Navigate to="/auth" />;
 };
 

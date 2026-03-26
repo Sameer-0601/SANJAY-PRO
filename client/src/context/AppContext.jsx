@@ -2,7 +2,7 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 import axios from 'axios';
 
 const AppContext = createContext();
-const BASE_URL = "https://your-backend.onrender.com";
+const BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5001";
 const API_URL = `${BASE_URL}/api`;
 
 export const AppProvider = ({ children }) => {

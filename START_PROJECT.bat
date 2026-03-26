@@ -1,6 +1,6 @@
 @echo off
 echo ===================================================
-echo     STARTING NEXUS INVOICE GENERATOR MERN STACK
+echo     STARTING INVOICE GENERATOR MERN STACK
 echo ===================================================
 echo.
 
