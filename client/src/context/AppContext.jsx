@@ -2,7 +2,8 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 import axios from 'axios';
 
 const AppContext = createContext();
-const API_URL = 'http://localhost:5001/api';
+const BASE_URL = "https://your-backend.onrender.com";
+const API_URL = `${BASE_URL}/api`;
 
 export const AppProvider = ({ children }) => {
   const [user, setUser] = useState(null);
